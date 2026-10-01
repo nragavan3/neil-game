@@ -10,6 +10,10 @@ Open `index.html` directly, or run `python3 -m http.server 8000` in this directo
 
 Push these files to your repository. In **Settings → Pages**, choose **Deploy from a branch**, select your branch and **/ (root)**, and save. The game uses relative paths and requires no build step or backend.
 
+## Working on it together
+
+Several people and their AI agents push to this repo, and every push to `main` goes live. The rules everyone follows are in [AGENTS.md](AGENTS.md). In short: run `bash scripts/sync.sh --status` before you start, and `git pull --rebase --autostash origin main` then `node scripts/check.mjs` before you push.
+
 ## Features
 
 - 12 randomized questions drawn from a 24-question historical NBA bank

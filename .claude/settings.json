@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/sync.sh\" --status 2>/dev/null || true",
+            "timeout": 20,
+            "statusMessage": "Checking for teammates' pushes..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/sync.sh\" 2>/dev/null || true",
+            "timeout": 20,
+            "statusMessage": "Checking for teammates' pushes..."
+          }
+        ]
+      }
+    ]
+  }
+}
